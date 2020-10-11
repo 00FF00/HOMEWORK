@@ -40,8 +40,8 @@ public class TicketMachine {
         else {
             // Simulate the printing of a ticket.
         System.out.println("----------*****----------");
-        System.out.println("This is a ticket");
-        System.out.println("Price :"+price+"yuan");
+        System.out.println("这是一个售票机");
+        System.out.println("票价: "+price+"元");
         System.out.println("----------*****----------");
         // Reduce the balance by the price.
         balance-=price;
@@ -78,5 +78,14 @@ public class TicketMachine {
     }
     public int getTotal(){
         return total;
+    }
+
+
+    /**
+     * Reset the ticket.
+     */
+    public  void reset(){
+        balance = 0;
+        total = 0;
     }
 }

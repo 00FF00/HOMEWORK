@@ -1,5 +1,4 @@
 public class TicketMachine {
-
     // The price of a ticket from this machine.
     private int price;
     // The amount of money entered by a customer so far.
@@ -11,12 +10,13 @@ public class TicketMachine {
      * Create a machine that issues tickets of the given price.
      */
     public  TicketMachine(int ticketCost){
-        balance=0;
-        total=0;
-        if(ticketCost>0)
-           price=ticketCost;
-        else
+        balance = 0;
+        total = 0;
+        if(ticketCost > 0) {
+            price = ticketCost;
+        }else {
             System.out.println("ticket must be positive!");
+        }
     }
 
     /**
@@ -24,10 +24,11 @@ public class TicketMachine {
      * Check that the amount is sensible.
      */
     public void  insetMoney(int amount){
-        if(amount<0)
+        if(amount<0) {
             System.out.println("You must use a positive value!");
-        else
-            balance+=amount;
+        }else {
+            balance += amount;
+        }
     }
 
     /**
@@ -35,18 +36,18 @@ public class TicketMachine {
      * Print an error message if more money is required.
      */
     void printTicket(){
-        if(balance<price)
+        if(balance<price) {
             System.out.println("Balance is not enough!You must insert at least: " + (price - balance) + " more cents.");
-        else {
+        }else {
             // Simulate the printing of a ticket.
-        System.out.println("----------*****----------");
-        System.out.println("这是一个售票机");
-        System.out.println("票价: "+price+"元");
-        System.out.println("----------*****----------");
-        // Reduce the balance by the price.
-        balance-=price;
-        // Update the total collected with the price.
-        total+=price;
+            System.out.println("----------*****----------");
+            System.out.println("This is a ticket");
+            System.out.println("price: "+price+"Yuan");
+            System.out.println("----------*****----------");
+            // Reduce the balance by the price.
+            balance-=price;
+            // Update the total collected with the price.
+            total+=price;
         }
     }
 
@@ -55,8 +56,8 @@ public class TicketMachine {
      * The balance is cleared.
      */
     public int refundBalance(){
-        int amountRefunded=balance;
-        balance=0;
+        int amountRefunded = balance;
+        balance = 0;
         return amountRefunded;
     }
 
@@ -66,8 +67,13 @@ public class TicketMachine {
     public  int getPrise(){
         return total;
     }
+
+    /**
+     * Set the price of the ticket
+     * @param price
+     */
     public  void setPrice(int price){
-        this.price=price;
+        this.price = price;
     }
 
     /**
@@ -76,6 +82,11 @@ public class TicketMachine {
     public int getBalance(){
         return balance;
     }
+
+    /**
+     * Get the total amount of money collected by this machine
+     * @return
+     */
     public int getTotal(){
         return total;
     }
@@ -89,3 +100,4 @@ public class TicketMachine {
         total = 0;
     }
 }
+
